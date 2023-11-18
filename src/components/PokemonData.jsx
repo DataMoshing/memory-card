@@ -17,6 +17,7 @@ export default function PokemonData() {
     function FetchPokemonData(pokemon) {
         let url = pokemon.url
 
+        // Second fetch call to get individual Pokemon data (type, number, etc)
         fetch(url)
             .then(response => response.json())
             .then(data => setPokemonData(data))
@@ -24,9 +25,7 @@ export default function PokemonData() {
     return (
         <div>
             <h1>Hello world</h1>
-            <pre>{JSON.stringify(pokemonData, null, 2)}</pre>
+            <pre>{JSON.stringify(pokemonData.name, null, 2)}</pre>
         </div>
     )
 }
-
-// Second fetch call to get individual Pokemon data (type, number, etc)
