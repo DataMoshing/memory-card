@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+img {
+    height: 100%;
+    /* width: 80%; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: "Press Start 2P", Helvetica, sans-serif;
+    font-size: small;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    max-width: 500px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    border: solid 1px black;
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
