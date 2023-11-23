@@ -1,4 +1,4 @@
-// import { useEffect, useState } from "react";
+import { useState } from "react";
 import Card from "./components/Card"
 import pokeData from "./components/pokeData"
 import "./styles/App.css"
@@ -12,14 +12,18 @@ function shuffleArray(array) {
 }
 
 function App() {
-  let pokeNames = pokeData.data.pokemon
+  const [pokeNames, setPokeNames] = useState(pokeData.data.pokemon)
+  // let pokeNames = pokeData.data.pokemon
 
+  function test() {
+    setPokeNames([...pokeNames])
+  }
   const cards = pokeNames.map(card => {
     return (
       <Card
+        key={card.id}
         img={card.img}
         name={card.name}
-        key={card.id}
       />
     )
   })
@@ -27,11 +31,12 @@ function App() {
   return (
     <div>
       <main>
-        {shuffleArray(cards)}
+        {cards}
+        <button onClick={() => test(shuffleArray(pokeNames))}>Test</button>
       </main>
     </div>
   )
 }
 
-export { App }
+export { App, shuffleArray }
 
