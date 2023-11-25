@@ -12,13 +12,13 @@ function shuffleArray(array) {
 }
 
 function App() {
-  const [pokeNames, setPokeNames] = useState(pokeData.data.pokemon)
+  const [pokemon, setPokemon] = useState(pokeData.data.pokemon)
   // let pokeNames = pokeData.data.pokemon
 
   function test() {
-    setPokeNames([...pokeNames])
+    setPokemon([...pokemon])
   }
-  const cards = pokeNames.map(card => {
+  const cards = pokemon.map(card => {
     return (
       <Card
         key={card.id}
@@ -32,7 +32,7 @@ function App() {
     <div>
       <main>
         {cards}
-        <button onClick={() => test(shuffleArray(pokeNames))}>Test</button>
+        <button onClick={() => test(shuffleArray(pokemon))}>Test</button>
       </main>
     </div>
   )
